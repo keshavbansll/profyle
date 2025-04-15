@@ -1,58 +1,107 @@
-html,body{
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
-}
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.background{
-    position:fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.circle{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 23vh;
+    height: 23vh;
+    background-color: #f9f9f9;
+    border-radius: 50%;
     z-index: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.background img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.main{
+.profile-pic{
+    position: absolute;
+    top: 3.4%;
+    left: 2.8%;
     z-index: 1;
 }
 
-.profile{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: auto;
-    height: 90vh;
-    opacity: 10;
-    animation: fadeIn 0.7s ease-out forwards;
-}
-
-.profile img{
-    width: 100%;
-    height: auto;
+.profile-pic img{
+    width: 20vh;
+    height: 20vh;
     display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.1s ease-in-out;
 }
 
-@keyframes fadeIn{
-    from{
-        opacity: 10;
-        transform: translate(-50%,-45%);
-    }
+.profile-pic img:hover{
+    transform: scale(1.05);
+}
+h1,h3{
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+}
+.name{
+    position: absolute;
+    top: 4%;
+    left: 17%;
+    z-index: 1;
+}
+.rectangle{
+    position: absolute;
+    top:17%;
+    left: 16%;
+    width: 70vh;
+    height: 6vh;
+    padding: 5% 5%;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+.nav-item{
+    font-family: sans-serif;
+    transition: font-weight 0.2s ease;
+    min-width: 100px;
+    text-align: center;
+}
+.nav-item.active{
+    font-weight:600;
+}
+.nav-item:hover{
+    cursor: pointer;
+    font-weight: 600;
+}
+
+hr{
+    position: absolute;
+    top: 27%;
+    border: 1px solid #000;
+    width: 0%;
+    margin: 10px auto;
+    z-index: 0;
+    animation: extendLine 0.4s ease-in forwards;
+}
+.box{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 40vw;
+    height: 95vh;
+    z-index: 1;
+    background-color: rgb(255, 228, 196);
+    padding: 20px;
+    display: block;
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.15),
+    5px 0px 8px rgba(0, 0, 0, 0.1),
+    0px 5px 8px rgba(0, 0, 0, 0.1),
+    0px -5px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes extendLine{
     to{
-        opacity: 1;
-        transform: translate(-50%,-50%);
+        width: 60%
     }
 }
